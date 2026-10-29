@@ -61,16 +61,19 @@ A popular restaurant wants to manage reservations, orders, and billing.
 | 9     | Supervisor | SupervisorID   | Primary Key (PK)                                |
 |       |            | Name           | Supervisor name                                 |
 |       |            | ContactDetails | Contact information                             |
+
+
 ### Relationships and Constraints
 
-Relationship	Cardinality	Participation	Notes
-Customer – Table (Has)	Many-to-One (N:1)	Customer: Total; Table: Partial	A customer is assigned to one table. A table can accommodate multiple customers over time.
-Waiter – Table (Serves)	One-to-Many (1:N)	Waiter: Partial; Table: Total	A waiter serves multiple tables. A table is served by one waiter at a time.
-Waiter – Order (Creates)	One-to-Many (1:N)	Waiter: Partial; Order: Total	A waiter creates multiple orders. An order is created by one waiter.
-Order – Table (Belongs to)	Many-to-One (N:1)	Order: Total; Table: Partial	An order belongs to one table. A table can have multiple orders over time.
-Order – OrderItem (Contains)	One-to-Many (1:N)	Order: Total; OrderItem: Total	An order contains multiple order items. Each order item belongs to one order.
-OrderItem – FoodItem (Refers to)	Many-to-One (N:1)	OrderItem: Total; FoodItem: Partial	Each order item refers to one food item. A food item can appear in multiple order items.
-Order – Bill (Generates)	One-to-One (1:1)	Order: Total; Bill: Total	A bill is generated for one order. An order has one bill.
-Chef – OrderItem (Prepares)	One-to-Many (1:N)	Chef: Partial; OrderItem: Total	A chef prepares multiple order items. Each order item is prepared by one chef.
-Supervisor – Order (Manages)	One-to-Many (1:N)	Supervisor: Partial; Order: Partial	A supervisor manages exceptional cases related to orders. An order may have supervisor oversight.
+| Relationship                     | Cardinality       | Participation                       | Notes                                                                                             |
+| -------------------------------- | ----------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Customer – Table (Has)           | Many-to-One (N:1) | Customer: Total; Table: Partial     | A customer is assigned to one table. A table can accommodate multiple customers over time.        |
+| Waiter – Table (Serves)          | One-to-Many (1:N) | Waiter: Partial; Table: Total       | A waiter serves multiple tables. A table is served by one waiter at a time.                       |
+| Waiter – Order (Creates)         | One-to-Many (1:N) | Waiter: Partial; Order: Total       | A waiter creates multiple orders. An order is created by one waiter.                              |
+| Order – Table (Belongs to)       | Many-to-One (N:1) | Order: Total; Table: Partial        | An order belongs to one table. A table can have multiple orders over time.                        |
+| Order – OrderItem (Contains)     | One-to-Many (1:N) | Order: Total; OrderItem: Total      | An order contains multiple order items. Each order item belongs to one order.                     |
+| OrderItem – FoodItem (Refers to) | Many-to-One (N:1) | OrderItem: Total; FoodItem: Partial | Each order item refers to one food item. A food item can appear in multiple order items.          |
+| Order – Bill (Generates)         | One-to-One (1:1)  | Order: Total; Bill: Total           | A bill is generated for one order. An order has one bill.                                         |
+| Chef – OrderItem (Prepares)      | One-to-Many (1:N) | Chef: Partial; OrderItem: Total     | A chef prepares multiple order items. Each order item is prepared by one chef.                    |
+| Supervisor – Order (Manages)     | One-to-Many (1:N) | Supervisor: Partial; Order: Partial | A supervisor manages exceptional cases related to orders. An order may have supervisor oversight. |
 
