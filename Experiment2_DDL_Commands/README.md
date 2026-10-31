@@ -114,7 +114,8 @@ OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
 
 ```sql
--- create table Invoices
+--
+create table Invoices
 (
     InvoiceID int PRIMARY KEY,
     InvoiceDate DATE,
@@ -143,7 +144,8 @@ ReviewText as TEXT
 
 
 ```sql
---  create table Reviews
+--
+create table Reviews
 (
     ReviewID INTEGER,
     ProductID INTEGER,
@@ -167,7 +169,8 @@ StockQuantity as INTEGER should be non-negative.
 
 
 ```sql
--- CREATE TABLE Products
+--
+CREATE TABLE Products
 (
     ProductID INTEGER PRIMARY KEY,
     ProductName TEXT UNIQUE NOT NULL,
@@ -186,7 +189,8 @@ StockQuantity as INTEGER should be non-negative.
 -- Insert a book with ISBN 978-1234567890, Title Data Science Essentials, Author Jane Doe, Publisher TechBooks, and Year 2024 into the Books table.
 
 ```sql
--- insert into Books
+--
+insert into Books
 Values('978-1234567890','Data Science Essentials','Jane Doe','TechBooks',2024);
 ```
 
@@ -200,7 +204,8 @@ Values('978-1234567890','Data Science Essentials','Jane Doe','TechBooks',2024);
 -- Write an SQL query to change the name of the column id to employee_id in the table employee.
 
 ```sql
--- alter table employee
+--
+alter table employee
 rename column id to employee_id;
 ```
 
@@ -219,7 +224,8 @@ EmployeeID  Name        Position    Department  Salary
 3           Anna Bell   Designer    Marketing   68000
 
 ```sql
---insert into Employee
+--
+insert into Employee
 Values(2,'John Smith','Developer','IT',75000),(3,'Anna Bell','Designer','Marketing',68000);
 ```
 
@@ -234,7 +240,8 @@ Values(2,'John Smith','Developer','IT',75000),(3,'Anna Bell','Designer','Marketi
 Table attributes are ProductID, ProductName, Price, Stock
 
 ```sql
--- Insert into ProductS
+--
+Insert into ProductS
 select * from Discontinued_products;
 ```
 
@@ -253,7 +260,8 @@ email as TEXT.
 phone as TEXT and not NULL with a check constraint to ensure the length of phone is at least 10 characters.
 
 ```sql
---create table contacts
+--
+create table contacts
 (
     contact_id INTEGER PRIMARY KEY,
     first_name TEXT NOT NULL,
@@ -283,7 +291,8 @@ Sample table: Student_details
 4                MARKS            INT (3)          0                  0
 
 ```sql
--- ALTER TABLE Student_details
+--
+ALTER TABLE Student_details
 ADD COLUMN Mobilenumber number;
 ```
 
@@ -304,7 +313,8 @@ The foreign key should set NULL on updates and deletes.
 item_desc and rate should not accept NULL.
 
 ```sql
--- create table item
+--
+create table item
 (
     item_id TEXT PRIMARY KEY,
     item_desc TEXT NOT NULL,
